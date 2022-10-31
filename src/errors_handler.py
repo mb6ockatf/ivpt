@@ -11,10 +11,7 @@ class ErrorHandler(object):
 		exc_type, exc_value, exc_tb = exc_info()
 		pretty_exception = format_exception(exc_type, exc_value, exc_tb)
 		error(pretty_exception)
-		print('Error: %s' % (' '.join(exception_object.args)))
-		print("Exception class: ", exception_object.__class__)
-		print('Traceback:', "\n", pretty_exception)
-
-
-if __name__ == "__main__":
-	stuff = ErrorHandler()
+		error_string = " ".join(list(map(str, exception_object.args)))
+		print("Error:", error_string)
+		print("Exception class:", exception_object.__class__)
+		print("Traceback:", "\n", "\n".join(pretty_exception))
