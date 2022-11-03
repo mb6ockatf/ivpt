@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from base import DatabaseConnection
+from src.database.base import DatabaseConnection
 
 
 class DatabaseSelect(DatabaseConnection):
@@ -14,7 +14,7 @@ class DatabaseSelect(DatabaseConnection):
 
     def select_basic_params(self, element_number: int):
         query = """
-        SELECT name, group, period
+        SELECT name, grp, period
         FROM basic_param
         WHERE number = ?;
         """
