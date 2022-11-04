@@ -3,16 +3,14 @@
 import unittest
 from src.database.create_table import DatabaseCreateTable
 from src.database.insert import DatabaseInsert
-from src.config import Configuration
+from src.config import configuration
 
 
 class TestDatabaseConnection(unittest.TestCase):
     """Test database insert methods"""
     def setUp(self):
         """Create tables & open database connection"""
-        self.config = Configuration()
-        self.config.touch_config()
-        self.config.read_config()
+        self.config = configuration()
         self.table_creator = DatabaseCreateTable(self.config)
         self.table_creator.create_all_tables()
         self.table_creator.close()
