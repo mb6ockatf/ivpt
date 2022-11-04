@@ -1,37 +1,67 @@
 #!/usr/bin/env python3
-
-from src.database.base import DatabaseConnection
+"""DatabaseSelect class"""
+from .base import DatabaseConnection
 
 
 class DatabaseSelect(DatabaseConnection):
-    def select_basic_info(self):
+
+    """Select data from database tables"""
+
+    def select_basic_info(self) -> tuple:
+        """
+        Get elements' numbers and symbols from table basic_info
+        """
         query = """
         SELECT number, abbreviation
         FROM basic_info
         ORDER BY 1;
         """
-        self.execute_query(query, None)
+        process = self.execute_query(query, None)
+        return process
 
-    def select_basic_params(self, element_number: int):
+    def select_basic_params(self, element_number: int) -> tuple:
+        """
+        Get elements' name, weight, group
+        and period from table basic_params
+
+        :element_number: int
+        element's number in periodic table
+        """
         query = """
-        SELECT name, grp, period
+        SELECT name, weight, grp, period
         FROM basic_param
         WHERE number = ?;
         """
-        self.execute_query(query, (element_number,))
+        process = self.execute_query(query, (element_number,))
+        return process
 
-    def select_congregation(self, element_number: int):
+    def select_congregation(self, element_number: int) -> tuple:
+        """
+        Get elements' metal parameter, amphoteric parameter,
+        energy level's value, gas parameter,
+        and semiconductor parameter from table congregation
+
+        :element_number: int
+        element's number in periodic table
+        """
         query = """
-        SELECT energy_levels, period, metal, amphoteric, gas, semiconductor
+        SELECT metal, amphoteric, energy_levels, gas, semiconductor
         FROM congregation
         WHERE number = ?;
         """
-        self.execute_query(query, (element_number,))
+        process = self.execute_query(query, (element_number,))
+        return process
 
-    @staticmethod
-    def select_links(self, element_number: int):
+    def select_links(self, element_number: int) -> tuple:
+        """
+        Get elements' wiki link from table links
+
+        :element_number: int
+        element's number in periodic table
+        """
         query = """
         SELECT wiki_link FROM links
         WHERE number = ?;
         """
-        self.execute_query(query, (element_number,))
+        process = self.execute_query(query, (element_number,))
+        return process
