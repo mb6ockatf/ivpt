@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ElementsTable class"""
 import periodictable as PT
-from basic import ElementsGroupsInfo
+from .basic import ElementsGroupsInfo
 
 
 class ElementsTable(ElementsGroupsInfo):
@@ -60,13 +60,9 @@ class ElementsTable(ElementsGroupsInfo):
         """Get some other stuff"""
         for j in self.elements:
             number = j.number
-            period_column = None
-            for period_column in self.periods.keys():
-                if number in self.periods[period_column]:
-                    break
             energy_level = None
-            for energy_level in self.energy_levels.keys():
-                if number in self.energy_levels[energy_level]:
+            for energy_level in self.energy_levels.values():
+                if number in energy_level:
                     break
             metal = number not in self.not_metals
             amphoteric = number in self.amphoteric
@@ -83,10 +79,8 @@ class ElementsTable(ElementsGroupsInfo):
     def get_links(self):
         """Get wiki links for every element"""
         for j in self.elements:
-            name = j.name
-            link = "https://en.wikipedia.org/wiki/" + name
-            yield link
-
-a = ElementsTable()
-for element in a.get_congregation():
-    print(element)
+            number = j.number
+            wiki_link = "https://en.wikipedia.org/wiki/" + j.name
+            data = {"number":    number,
+                    "wiki_link": wiki_link}
+            yield data
