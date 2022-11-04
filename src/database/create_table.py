@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """DatabaseCreateTable class"""
-from src.database.base import DatabaseConnection
+from .base import DatabaseConnection
 
 
 class DatabaseCreateTable(DatabaseConnection):
+
     """Create & drop database tables"""
-    def create_table_basic_info(self):
+
+    def create_table_basic_info(self) -> tuple:
         """Create basic_info table"""
         query = """
         CREATE TABLE IF NOT EXISTS basic_info (
@@ -14,9 +16,10 @@ class DatabaseCreateTable(DatabaseConnection):
                 CONSTRAINT number_pk
                 PRIMARY KEY (number));
         """
-        self.execute_query(query, None)
+        process = self.execute_query(query, None)
+        return process
 
-    def create_table_basic_params(self):
+    def create_table_basic_params(self) -> tuple:
         """Create basic_params table"""
         query = """
         CREATE TABLE IF NOT EXISTS basic_params (
@@ -29,9 +32,10 @@ class DatabaseCreateTable(DatabaseConnection):
                     FOREIGN KEY (number)
                     REFERENCES basic_info(number));
         """
-        self.execute_query(query, None)
+        process = self.execute_query(query, None)
+        return process
 
-    def create_table_congregation(self):
+    def create_table_congregation(self) -> tuple:
         """Create congregation table"""
         query = """
         CREATE TABLE IF NOT EXISTS congregation (
@@ -45,9 +49,10 @@ class DatabaseCreateTable(DatabaseConnection):
                     FOREIGN KEY (number)
                     REFERENCES basic_info(number));
         """
-        self.execute_query(query, None)
+        process = self.execute_query(query, None)
+        return process
 
-    def create_table_links(self):
+    def create_table_links(self) -> tuple:
         """Create links table"""
         query = """
         CREATE TABLE IF NOT EXISTS links (
@@ -57,34 +62,43 @@ class DatabaseCreateTable(DatabaseConnection):
                     FOREIGN KEY (number)
                     REFERENCES basic_info(number));
         """
-        self.execute_query(query, None)
+        process = self.execute_query(query, None)
+        return process
 
-    def create_all_tables(self):
+    def create_all_tables(self) -> list:
         """Call all tables' creation methods"""
-        self.create_table_basic_info()
-        self.create_table_basic_params()
-        self.create_table_congregation()
-        self.create_table_links()
+        process = []
+        process += [self.create_table_basic_info()]
+        process += [self.create_table_basic_params()]
+        process += [self.create_table_congregation()]
+        process += [self.create_table_links()]
+        return process
 
-    def drop_basic_info(self):
+    def drop_basic_info(self) -> tuple:
         """Drop basic_info table"""
-        self.execute_query("DROP TABLE basic_info;", None)
+        process = process = self.execute_query("DROP TABLE basic_info;", None)
+        return process
 
-    def drop_basic_params(self):
+    def drop_basic_params(self) -> tuple:
         """Drop basic_params table"""
-        self.execute_query("DROP TABLE basic_params;", None)
+        process = self.execute_query("DROP TABLE basic_params;", None)
+        return process
 
-    def drop_congregation(self):
+    def drop_congregation(self) -> tuple:
         """Drop congregation table"""
-        self.execute_query("DROP TABLE congregation;", None)
+        process = self.execute_query("DROP TABLE congregation;", None)
+        return process
 
-    def drop_links(self):
+    def drop_links(self) -> tuple:
         """Drop links table"""
-        self.execute_query("DROP TABLE links;", None)
+        process = self.execute_query("DROP TABLE links;", None)
+        return process
 
-    def drop_all_tables(self):
+    def drop_all_tables(self) -> list:
         """Call all tables' destructive methods"""
-        self.drop_basic_info()
-        self.drop_basic_params()
-        self.drop_congregation()
-        self.drop_links()
+        process = []
+        process += [self.drop_basic_info()]
+        process += [self.drop_basic_params()]
+        process += [self.drop_congregation()]
+        process += [self.drop_links()]
+        return process
