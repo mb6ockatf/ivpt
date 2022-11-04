@@ -4,14 +4,12 @@ from os import sep, path, mkdir
 from logging import info
 from typing import Union
 from sqlite3 import connect
-from src.config import Configuration
-
 
 class DatabaseConnection:
     """Parental class to handle DB connection"""
-    def __init__(self, config_object: Configuration):
-        config = config_object.CONFIG
-        self.db_path = config_object.HOME + sep + config["db"]
+    def __init__(self, config: dict):
+        home = path.expanduser("~")
+        self.db_path = home + sep + config["db"]
         path_items_list = list(self.db_path.split(sep))[1:]
         for index in range(len(path_items_list)):
             cur_dir = sep + sep.join(path_items_list[0:index])
@@ -19,7 +17,7 @@ class DatabaseConnection:
                 mkdir(cur_dir)
         if not path.isfile(self.db_path):
             with open(self.db_path, "w", encoding="utf-8"):
-                ...
+                info("db file created")
         self.connection = connect(self.db_path)
         info("db connection opened")
 
@@ -28,7 +26,7 @@ class DatabaseConnection:
         self.connection.close()
         info("db connection closed")
 
-    def execute_query(self, query: str, data: Union[dict, tuple, None]):
+    def execute_query(self, query: str, data: Union[dict, tuple, None]) -> tuple:
         """Execute SQL query with values"""
         cursor = self.connection.cursor()
         if data:
