@@ -2,7 +2,7 @@
 """ElementPage class"""
 from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtGui import QFont
-from config import configuration
+from essential import configuration
 from database import DatabaseSelect
 from .hyper_link_label import HyperlinkLabel
 

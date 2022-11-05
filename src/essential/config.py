@@ -2,7 +2,7 @@
 """Configuration function"""
 from os import path, mkdir, sep
 from tomli import load, TOMLDecodeError
-from errors_handler import show_exception
+from .errors_handler import show_exception
 
 
 def configuration() -> dict:
@@ -10,7 +10,7 @@ def configuration() -> dict:
 	home = path.expanduser("~")
 	config_path = home + "/.IVPT/config.toml"
 	config = None
-	default_config = "src/default_config.toml"
+	default_config = "src/essential/default_config.toml"
 	path_items_list = list(config_path.split(sep))[1:]
 	for index in range(len(path_items_list)):
 		cur_dir = sep + sep.join(path_items_list[0: index])

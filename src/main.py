@@ -2,11 +2,11 @@
 """Main module"""
 from sys import argv, version_info
 from PyQt5.QtWidgets import QApplication
-from config import configuration
+from essential import configuration
 from database import DatabaseCreateTable, DatabaseInsert, DatabaseSelect
 from interfaces import Main
 from elements import ElementsTable
-from log import setup_logging
+from essential import setup_logging
 
 
 def fill_database_tables(config: dict):
