@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Main window class"""
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from database import DatabaseSelect
@@ -21,16 +20,12 @@ class Main(QMainWindow):
         for column in range(18):
             text = str(column + 1)
             self.btn = QLabel(text, self)
-            # self.btn.resize(60, 60)
             self.btn.move(170 + 60 * column, 20)
-            # self.btn.setEnabled(False)
             self.buttons += [self.btn]
         for row in range(7):
             text = str(row + 1)
             self.btn = QLabel(text, self)
-            # self.btn.resize(60, 60)
             self.btn.move(110, 80 + 60 * row)
-            # self.btn.setEnabled(False)
             self.buttons += [self.btn]
         basic_info = self.database.select_basic_info()
         table = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -60,6 +55,11 @@ class Main(QMainWindow):
                 self.btn.clicked.connect(self.open_element_page)
                 self.buttons += [self.btn]
         self.database.close()
+
+    def show_stechiometry_window(self):
+        """Open stechiometry operations' window"""
+        # widget = 
+        ...
 
     def open_element_page(self):
         """Open element's page window when button is pressed"""

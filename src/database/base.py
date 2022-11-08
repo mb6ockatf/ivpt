@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Base sqlite3-DB connection class"""
 from os import sep, path, mkdir
 from logging import info

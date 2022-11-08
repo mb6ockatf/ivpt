@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """ElementsTable class"""
 import periodictable as PT
 from .basic import ElementsGroupsInfo

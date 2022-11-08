@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """DatabaseInsert class"""
 from .chemistry import ChemistryLogicChecks as chemistry
 from .base import DatabaseConnection

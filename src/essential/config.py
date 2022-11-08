@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Configuration function"""
 from os import path, mkdir, sep
 from tomli import load, TOMLDecodeError

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """ElementPage class"""
 from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtGui import QFontDatabase, QFont
