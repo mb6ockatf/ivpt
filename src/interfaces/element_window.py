@@ -5,18 +5,19 @@ from PyQt5.QtGui import QFontDatabase, QFont
 from essential import configuration
 from database import DatabaseSelect
 from .hyper_link_label import HyperlinkLabel
-from os import listdir
+from .font import Font
 
 
 class ElementPage(QWidget):
     """Create element's window"""
     def __init__(self, element: str, number: int):
         super().__init__()
-        font_path = "src/interfaces/Ubuntu_Regular.ttf"
-        QFontDatabase.addApplicationFont("src/interfaces/fonts/Ubuntu_Regular.ttf")
-        self.regular_font = QFont("Ubuntu Regular", 20)
-        self.symbol_font = QFont("Ubuntu Regular", 90)
-        self.exclamation_font = QFont("Ubuntu Regular", 30)
+        size_sheet = {"normal": 20, "large": 30, "giant": 90}
+        font = Font(name="Ubuntu Regular", **size_sheet)
+        QFontDatabase.addApplicationFont(font.path)
+        self.regular_font = QFont(font.name, font.normal_size)
+        self.symbol_font = QFont(font.name, font.giant_size)
+        self.exclamation_font = QFont(font.name, font.large_size)
         self.wiki_label_y = 275
         self.element = element
         self.number = number
