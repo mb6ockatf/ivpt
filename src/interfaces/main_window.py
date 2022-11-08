@@ -2,6 +2,7 @@
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from database import DatabaseSelect
 from .element_window import ElementPage
+from .stoichiometry import StoichiometryPage
 
 
 class Main(QMainWindow):
@@ -55,11 +56,16 @@ class Main(QMainWindow):
                 self.btn.clicked.connect(self.open_element_page)
                 self.buttons += [self.btn]
         self.database.close()
+        self.stoichiometry_button = QPushButton("Stoichiometry", self)
+        self.stoichiometry_button.resize(140, 70)
+        self.stoichiometry_button.move(1100, 640)
+        self.stoichiometry_button.clicked.connect(self.show_stoichiometry_window)
 
-    def show_stechiometry_window(self):
-        """Open stechiometry operations' window"""
-        # widget = 
-        ...
+    def show_stoichiometry_window(self):
+        """Open stoichiometry operations' window"""
+        widget = StoichiometryPage()
+        widget.show()
+        self.widgets += [widget]
 
     def open_element_page(self):
         """Open element's page window when button is pressed"""

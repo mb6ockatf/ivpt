@@ -29,7 +29,11 @@ class ElementPage(QWidget):
 
     def init_ui(self):
         """Show data labels"""
-        self.setGeometry(300, 300, 500, 400)
+        width = 500
+        height = 400
+        self.setGeometry(300, 300, width, height)
+        self.setFixedWidth(width)
+        self.setFixedHeight(height)
         self.setWindowTitle(self.element)
         data = self.database.select_basic_params(self.number)[0]
         self.name_label = QLabel(self)
