@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
 """Main module"""
-import sys
-from PyQt5.QtWidgets import QApplication
-from essential import configuration
-from database import DatabaseCreateTable, DatabaseInsert, DatabaseSelect
-from interfaces import Main
-from elements import ElementsTable
-from essential import setup_logging
 
 
 def fill_database_tables(config_object: dict):
@@ -30,9 +23,32 @@ def fill_database_tables(config_object: dict):
     sql_executor.close()
 
 
+def pip_install_package(package: str) -> int:
+    """Install package with pip if not installed"""
+    try:
+        __import__(package)
+    except ImportError:
+        query = [sys.executable, "-m", "pip", "install", package, "--quiet"]
+        exit_code = subprocess.check_call(args=query)
+        return exit_code
+
+
 if __name__ == '__main__':
+    import sys
     if sys.version_info < (3, 10):
         raise DeprecationWarning("Python >= 3.10 required")
+    import subprocess
+    from interfaces import Main, LoadingPage
+    from elements import ElementsTable
+    from essential import setup_logging, configuration
+    from database import DatabaseCreateTable, DatabaseInsert, DatabaseSelect
+    with open("requirements.txt", "r", encoding="utf-8") as file:
+        contents = file.readlines()
+    contents = [*map(lambda j: j.rstrip(), contents)]
+    for package_name in contents:
+        if "PyQt" in package_name:
+            pip_install_package(package_name)
+    from PyQt5.QtWidgets import QApplication
     config = configuration()
     setup_logging(config["log"])
     database = DatabaseCreateTable(config)
@@ -53,6 +69,10 @@ if __name__ == '__main__':
         case 118:
             pass
     app = QApplication(sys.argv)
-    window = Main(config)
-    window.show()
+    main_window = Main()
+    loading_window = LoadingPage()
+    loading_window.show()
+    setup_logging(config["log"])
+    loading_window.hide()
+    main_window.show()
     sys.exit(app.exec())
