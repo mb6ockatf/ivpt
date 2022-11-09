@@ -49,6 +49,9 @@ if __name__ == '__main__':
         if "PyQt" in package_name:
             pip_install_package(package_name)
     from PyQt5.QtWidgets import QApplication
+    app = QApplication(sys.argv)
+    loading_window = LoadingPage()
+    loading_window.show()
     config = configuration()
     setup_logging(config["log"])
     database = DatabaseCreateTable(config)
@@ -68,11 +71,8 @@ if __name__ == '__main__':
             fill_database_tables(config)
         case 118:
             pass
-    app = QApplication(sys.argv)
-    main_window = Main()
-    loading_window = LoadingPage()
-    loading_window.show()
     setup_logging(config["log"])
     loading_window.hide()
+    main_window = Main()
     main_window.show()
     sys.exit(app.exec())

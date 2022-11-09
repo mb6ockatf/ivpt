@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """TestDatabaseConnection testcase"""
 import unittest
-from src.database import DatabaseCreateTable
-from src.database import DatabaseInsert
+from src.database import DatabaseCreateTable, DatabaseInsert
 from src.essential.config import configuration
 
 

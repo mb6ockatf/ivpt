@@ -1,17 +1,19 @@
 """Main window class"""
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from database import DatabaseSelect
+from essential.config import configuration
 from .element_window import ElementPage
 from .stoichiometry import StoichiometryPage
 
 
 class Main(QMainWindow):
     """Create perodic table window"""
-    def __init__(self, config: dict):
+    def __init__(self):
         super().__init__()
         self.setGeometry(0, 0, 1280, 740)
         self.setWindowTitle("Periodic table of elements")
-        self.database = DatabaseSelect(config)
+        self.config = configuration()
+        self.database = DatabaseSelect(self.config)
         self.widgets = []
         self.buttons = []
         self.init_ui()
