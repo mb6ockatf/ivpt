@@ -37,7 +37,7 @@
 | ----- |
 | number INTEGER |
 | wiki_link TEXT |
-| CONSTRAINT fk_element_numberFOREIGN KEY (number) REFERENCES basic_info(number) |
+| CONSTRAINT fk_element_number FOREIGN KEY (number) REFERENCES basic_info(number) |
 
 ~~И ещё две таблицы с переводами~~
 ~~(одна - для перевода названий елементов, другая - для всего остального)~~
@@ -182,7 +182,9 @@ IVPT
 	- `execute_query(self, query: str, data: Union[dict, tuple, None]) -> tuple`:
 	передаются запрос и данные к нему, которые потом будут подставлены в `placeholders`
 	Возвращает результат выполнения запроса `tuple`
+
 От него наследуются "прикладные" классы:
+
 `class DatabaseCreateTable(Base)`: обеспечивает создание и удаление таблиц из БД
 - атрибуты:
 	нет
@@ -203,11 +205,13 @@ IVPT
 - методы:
 	- `insert_<название таблицы>(*args, **kvargs) -> tuple`:
 	передаёт запрос на добавление данных в таблицу в `class Base`.
+
 `class DatabaseSelect`: отвечает за получение данных из БД
 - методы:
 	- `select<название таблицы>(element_number: int) -> tuple`:
 	передает запрос на получение данных из таблицы по указанному номеру элемента.
 	Возвращает результат запроса кортеже.
+
 `class ChemistryLogic`: обеспечивает методы проверок "химической" логики
 - методы:
 	- `@staticmethod make_abb(abb: str) -> str`:
@@ -312,8 +316,9 @@ IVPT
 `class HyperlinkLabel(QLabel):` отвечает за создание объекта гиперссылки
 
 `class Font' отвечает за подключение шрифтов из файла
+
 IVPT = interactive visual periodic table, название проекта
 
 ------
 
-Sat 5 Nov 2022 14:11:32 PM MSK
+Thu 10 Nov 2022 16:17:47 PM MSK
