@@ -122,10 +122,10 @@ class StoichiometryPage(QMainWindow):
             self.add_row_btn.hide()
         self.rows_count += 1
 
-    def count_mass(self, rows: SumRow):
+    def count_mass(self, rows: list):
         for line in rows:
             line.count_mass()
 
-    def count_atoms(self, rows: SumRow):
+    def count_atoms(self, rows: list):
         for line in rows:
             line.count_atoms()

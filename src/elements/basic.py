@@ -61,7 +61,7 @@ class ElementsGroupsInfo:
         """Get chalcogens' range of numbers"""
         return (8, 16, 34, 52, 84, 116)
 
-    def increment(self, number: int) ->int:
+    def increment(self, number: int) -> int:
         """Increment number by 1"""
         return number + 1
 

@@ -8,117 +8,109 @@
 за собой лишние зависимости.
 
 Таблицы:
-```SQL
-CREATE TABLE IF NOT EXISTS basic_info (
-	number			INTEGER	UNSIGNED	NOT NULL,
-	abbreviation	TEXT	UNIQUE		NOT NULL,
-		CONSTRAINT number_pk
-			PRIMARY KEY (number));
-```
-```SQL
-CREATE TABLE IF NOT EXISTS basic_params (
-	number	INTEGER UNSIGNED UNIQUE NOT NULL,
-	name	TEXT			 UNIQUE NOT NULL,
-	weight	REAL					NOT NULL,
-	grp		TEXT,
-	period  INTEGER UNSIGNED,
-		CONSTRAINT fk_element_number
-			FOREIGN KEY (number)
-			REFERENCES basic_info(number));
-```
-```SQL
-CREATE TABLE IF NOT EXISTS congregation (
-	number		  INTEGER UNSIGNED UNIQUE NOT NULL,
-	metal		  INTEGER UNSIGNED DEFAULT 0,
-	amphoteric	  INTEGER UNSIGNED DEFAULT 0,
-	energy_levels INTEGER UNSIGNED,
-	gas			  INTEGER UNSIGNED DEFAULT 0,
-	semiconductor INTEGER UNSIGNED DEFAULT 0,
-		CONSTRAINT fk_element_number
-			FOREIGN KEY (number)
-			REFERENCES basic_info(number));
-```
-```SQL
-CREATE TABLE IF NOT EXISTS links (
-	number	  INTEGER,
-	wiki_link TEXT
-		CONSTRAINT fk_element_number
-			FOREIGN KEY (number)
-			REFERENCES basic_info(number));
-```
+
+| basic_info |
+| ---------- |
+| number INTEGER UNSIGNED NOT NULL |
+| abbreviation TEXT UNIQUE NOT NULL|
+| CONSTRAINT number_pk PRIMARY KEY number |
+
+| basic_params |
+| ------------ |
+| number INTEGER UNSIGNED NOT NULL |
+| name TEXT UNIQUE NOT NULL |
+| weight REAL NOT NULL |
+| grp TEXT |
+| CONSTRAINT fk_element_number FOREIGN KEY number REFERENCES basic_info(number) |
+
+| congregation |
+| ------------ |
+| number INTEGER UNSIGNED UNIQUE NOT NULL|
+| metal	INTEGER UNSIGNED DEFAULT 0 |
+| amphoteric INTEGER UNSIGNED DEFAULT 0|
+| energy_levels INTEGER UNSIGNED |
+| gas INTEGER UNSIGNED DEFAULT 0 |
+| semiconductor INTEGER UNSIGNED DEFAULT 0 |
+| CONSTRAINT fk_element_number FOREIGN KEY (number) REFERENCES basic_info(number) |
+
+| links |
+| ----- |
+| number INTEGER |
+| wiki_link TEXT |
+| CONSTRAINT fk_element_numberFOREIGN KEY (number) REFERENCES basic_info(number) |
+
 ~~И ещё две таблицы с переводами~~
 ~~(одна - для перевода названий елементов, другая - для всего остального)~~
 
-*не будет реализовано*
+*не будет реализовано до даты сдачи проекта*
 
-## Интерфейс
-
-Будет одно основное окно таблицы.
-При нажатии на элемент будет открываться окно с информацией по нему.
+~~Информация о языке будет храниться в файле `~/IVPT/lang.toml`~~
+Информация о языке будет храниться стандартном файле конфигурации
+_не будет реализовано до даты сдачи проекта_
 
 # Структура
-
 ## БД
-
 ### Класс подключния к базе данных
-От него будут наследоваться классы, обеспечивающие выполнение запросов SQL (`select`, `insert` и так далее)
+От него наследуются классы, обеспечивающие выполнение запросов SQL (`select`, `insert` и так далее)
 
 ### Тесты для БД
-Будет использоваться фреймворк unittest. Он встроен в Python с версии 2.1
+Используется фреймворк unittest.
+Он встроен в Python с версии 2.1
 
 ### ~~Парсер для получения информации о хим. элементах из интернета.~~
 ~~Будет использована библиотека Beautiful Soup со встроенным в python парсером html-документов.~~
 ~~Также, модуль requests для получения страницы~~
 
-Парсинг данных из интернета занимает много времени.
-Поэтому будет использоваться библиотека `periodictable`.
+Парсинг данных из интернета занимает много времени, поэтому будет использоваться библиотека `periodictable`.
 Из неё можно получить всю нужную информацию для базы данных.
-При каждом запуске будет проверяться существование и целостность файла БД.
+При каждом запуске будет проверяться существование & целостность файла БД.
 При выявлении проблем база данных будет пересоздана.
-Это обеспечивает целостность данных.
 
-*Однако, самый первый старт программы будет занимать некоторое время - вплоть до минуты с hard disk drive (с SSD меньше).*
-*Зато все последующие запуски происходят без задержек*
+*Однако, самый первый старт программы будет занимать некоторое время - вплоть до минуты с hard disk drive (с SSD задержка совсем незаметна).*
+*Зато все последующие запуски происходят без задержек, потому что они берутся из БД*
 
 ## Интерфейс
 ### Класс окна основного окна
 При инициализации в нём будет отрисовываться таблица с элементами.
-Будут видны только номер элемента и его обозначение.
+Будут видны только номер элемента и его обозначение;
+заголовки столбцов периодов и рядов энергетических уровней
 Нажатие на элемент будет создавать окно элемента.
+В правом нижнем углу будет кнопка перехода в окно стехиометрических расчётов.
+
 ~~Внизу окна будет кнопка для добавления нового элемента.~~
 ~~Нажатие на неё будет создавать окно `NewElementWindow`~~
-
 _не будет реализовано_
 
 #### Элемент интерфейса для смены языка
-
-_второстепенная задача. Скорее всего, не будет реализовано до даты сдачи проекта_
+_второстепенная задача. Не будет реализовано до даты сдачи проекта_
 
 #### ~~Кнопка сброса базы данных (и закрытия программы)~~
-
 _не будет реализовано_
 
 #### Функционал для проведения стехиометрических расчётов
+~~второстепенная задача. Скорее всего, не будет реализовано до даты сдачи проекта~~
 
-_второстепенная задача. Скорее всего, не будет реализовано до даты сдачи проекта_
-
- Информация о языке будет храниться в файле `~/IVPT/lang.toml`
+Окно `StoichiometryPage`.
+Будет несколько полей для ввода формул.
+Можно будет добавлять новые поля нажатием на специальную кнопку.
+Количество полей для ввода ограничено.
+У каждого поля формулы будет место для отображения массы и количества атомов.
+Эти значения будут вычисляться с нажатием кнопки `eval`.
+Она будет находиться в правом нижнем углу окна.
 
 ### Класс окна элемента `ElementWindow`
-
 В нём будет отображена подробная информация об элементе (полное название, группа, период, атомная 
-масса, принадлежность к металлам / неметаллам, группа элемента по ~~электронным~~ энергетическим 
-уровням и т.д.), ссылка на статью в интернете.
+масса, принадлежность к металлам / неметаллам, группа элемента по ~~электронным~~ энергетическим уровням и т.д.), ссылка на статью в интернете.
 
 ~~Так же, здесь можно будет удалть элемент~~
-
 _не будет реализовано_
 
 ### Окно, обрабатывающее исключения
 
-_второстепенная задача. Скорее всего, не будет реализовано до даты сдачи проекта_
+_второстепенная задача. Не будет реализовано до даты сдачи проекта_
 
 ### ~~Окно добавления нового элемента `NewElementWindow`.~~
+
 ~~Можно будет указать подробные параметры (см. пункт про `ElementWindow`).~~
 ~~Они будут разделены по группам чтобы избежать лишних запросов к БД~~
 ~~(например, если не было указано ни одного параметра для таблицы `congregation`)~~
@@ -132,35 +124,194 @@ _не будет реализовано_
 Остальные пути можно будет настроить в самом файле
 ```ascii
 IVPT
+.
+├── docs
+│   └── project_structure.md
 ├── README.md
 ├── requirements.txt
 ├── runtime.txt
 ├── src
-│   ├── config.py
 │   ├── database
 │   │   ├── base.py
 │   │   ├── chemistry.py
 │   │   ├── create_table.py
 │   │   ├── __init__.py
 │   │   ├── insert.py
+│   │   ├── __pycache__
 │   │   └── select.py
-│   ├── default_config.toml
 │   ├── elements
 │   │   ├── basic.py
 │   │   ├── elements.py
-│   │   └── __init__.py
-│   ├── errors_handler.py
-│   ├── __init__.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── essential
+│   │   ├── config.py
+│   │   ├── default_config.toml
+│   │   ├── errors_handler.py
+│   │   ├── __init__.py
+│   │   ├── log.py
+│   │   └── __pycache__
 │   ├── interfaces
 │   │   ├── element_window.py
+│   │   ├── font.py
+│   │   ├── fonts
+│   │   │   └── Ubuntu-Regular.ttf
 │   │   ├── hyper_link_label.py
 │   │   ├── __init__.py
-│   │   └── main_window.py
-│   ├── log.py
+│   │   ├── loading_window.py
+│   │   ├── main_window.py
+│   │   ├── __pycache__
+│   │   └── stoichiometry.py
 │   └── main.py
 └── tests
+    ├── __pycache__
     └── test_database_insert.py
 ```
+
+## Method reference
+
+### database
+
+`class Base`: обеспечивает соединение с базой данных и передача запросов в `sqlite3`:
+- методы:
+	- `__init__(self, config: dict)`:
+	передаётся конфигурация `dict`.
+	Создаётся подключение к БД
+	- `close`:
+	закрывается подключение к БД
+	- `execute_query(self, query: str, data: Union[dict, tuple, None]) -> tuple`:
+	передаются запрос и данные к нему, которые потом будут подставлены в `placeholders`
+	Возвращает результат выполнения запроса `tuple`
+От него наследуются "прикладные" классы:
+`class DatabaseCreateTable(Base)`: обеспечивает создание и удаление таблиц из БД
+- атрибуты:
+	нет
+- методы:
+	- `create_table<название таблицы> -> tuple`:
+	передает запрос на создание соответствующей таблицы в `class Base`
+	- `create_all_tables() -> list`:
+	вызывает методы для создания всех таблиц.
+	Возвращается список с результатами выполнения всех методов.
+	(список пустых кортежей в случае успеха)
+	- `drop_<название таблицы> -> None`:
+	передает запрос на удаление соответствующей таблицы в `class Base`
+	- `drop_all_tables -> list`:
+	вызывает методы для создания всех таблиц.
+	Возвращается список с результатами выполнения всех методов.
+	(список пустых кортежей в случае успеха)
+`class DatabaseInsert`: отвечает за добавление данных в БД
+- методы:
+	- `insert_<название таблицы>(*args, **kvargs) -> tuple`:
+	передаёт запрос на добавление данных в таблицу в `class Base`.
+`class DatabaseSelect`: отвечает за получение данных из БД
+- методы:
+	- `select<название таблицы>(element_number: int) -> tuple`:
+	передает запрос на получение данных из таблицы по указанному номеру элемента.
+	Возвращает результат запроса кортеже.
+`class ChemistryLogic`: обеспечивает методы проверок "химической" логики
+- методы:
+	- `@staticmethod make_abb(abb: str) -> str`:
+	получает параметр - символ `str` химического елемента.
+	Поднимает `AssertionError` если получено неправильное значение.
+	Возвращает исправленное значение
+	- `@staticmethod check_number(number: int) -> int`:
+	получает параметр - номер `int` элемента в параметрах.
+	Поднимает `AssertionError` если получено неправильное значение.
+	Возвращает параметр без изменений
+	- `@staticmethod check_amphoteric_metal(metal: bool, amphoteric: bool`):
+	в праметрах получает булево значение металлических свойств и амфотерности элемента.
+	Поднимает `AssertionError` если амфотерный элемент не имеет металлических свойств
+	- `@staticmethod check_period(period: int) -> int`:
+	получает параметр - значение периода элемента `int`.
+	Поднимает `AssertionError` если значение периода некорректно.
+	Возвращает параметр без изменений
+	- `@staticmethod check_energy_levels(energy_level_value: int) -> int`:
+	получает параметр - значение энергетического уровня элемента.
+	Поднимает `AssertionError` если значение энергетического уровня некорректно.
+	Возвращает параметр без изменений
+	- `@staticmethod make_name(element_name: str) -> str`:
+	получает параметр - название елемента `str`.
+	Поднимает `AssertionError`, если длинна названия равна 0.
+	Возвращает имя, написанное с большой буквы
+	- `@staticmethod check_group(element_group: str) -> str`:
+	получает параметр - группу элемента `str`
+	Поднимает `AssertionError`, если такой группы нет в числе поддерживаемых значений.
+	Возвращает параметр без изменений
+	- `@staticmethod check_link(link: str) -> str`:
+	получает параметр - ссылку на элемент `str`.
+	Поднимает `AssertionError`, если длинна ссылки равна 0.
+	В будущем будут добавлены и другие проверки.
+	(Когда будет реализована поддержка других языков - будет выдаваться ссылка на соответствующем языке.
+	Для этого нужны будут дополнительные проверки)
+	Возвращает параметр без изменений
+	- `@staticmethod check_weight(weight: float) -> float`:
+	получает параметр - относительную атомную массу элемента `float`.
+	Поднимает `AssertionError`, если масса <=0.
+	Возвращает параметр без изменений
+
+### elements
+
+`class ElementsGroupsInfo`: предоставляет данные о группах, в которых входят элементов
+- `properties`:
+	возвращают номера элементов, относящихся к группе
+	- `lanthanoid -> set`:
+	- `actinoid -> set`:
+	- `alkali_metal -> tuple`:
+	- `alkaline_earth_metals(self) -> tuple`:
+	- `metalloid(self) -> tuple`:
+	- `reactive_nonmetals(self) -> set`:
+	- `transition_metals(self) -> set`:
+	- `noble_gas(self) -> tuple`:
+	- `pnictogen(self) -> tuple`:
+	- `chalcogen(self) -> tuple`:
+	- `periods(self) -> dict`:
+	- `not_metals(self) -> set`:
+- `methods`:
+	- `increment(number: int) -> int`:
+	увеличивает число на 1 и возвращает его
+
+`class ElementsTable(ElementsGroupInfo)`: отвечает за получение данных из библиотеки `periodictable`
+- `__init__`:
+элементы `periodictable` присваиваются `self.elements`
+- `get_basic_info -> yield dict`:
+С каждой итерацией возвращает номер и обозначение каждого элемента
+- `get_basic_params -> yield dict`:
+С каждой итерацией возвращает номер, имя, масса, группу и период элемента в виде `dict`
+- `get_congregation -> yield dict`:
+С каждой итерацией возвращает номер, металлические свойства, амфотерность,
+энергетические уровни, газ, полупроводниковые свойства элемента в виде `dict`
+- `get_links -> yield dict`:
+С каждой итерацией возвращает номер и ссылку на статью в интернете для
+каждого элемента
+
+### essential
+
+- `configuration -> dict`:
+возвращает конфигурацию из toml файла
+- `show_exception(excption_object)`
+красиво выводит информацию об исключении
+- `setup_logging(log_name: str)`
+настраивает логирование
+
+### interfaces
+
+`class Main(QMainWindow)`: отвечает за отрисовку окна периодической таблицы.
+Процесс отрисовки логически разделён на несколько методов, большая часть которых вызывается из `__init__`.
+Нажатие на кнопку `stoichiometry_button` создаёт окно техиометрических расчётов `StoichiometryPage`.
+Нажатие на клетку таблицы открывает окно элемента
+
+`class ElementPage(QWidget)`: отвечает за отрисовку окна элемента.
+Процесс создания логически разделён на несколько методов, большая часть которых вызывается из `__init__`.
+Нажатие на кнопку `stoichiometry_button` создаёт окно техиометрических расчётов `StoichiometryPage`.
+Нажатие на кнопку `add_row_btn` добавляет новое поле для ввода формулы.
+Нажатие на кнопку `eval_button` выставляет значение атомной массы и количества атомов в соответствующие поля.
+
+`class LoadingPage(QMainWindow)`: отвечает за отрисовку окна загрузки
+Процесс отрисовки логически разделён на несколько методов, большая часть которых вызывается из `__init__`.
+
+`class HyperlinkLabel(QLabel):` отвечает за создание объекта гиперссылки
+
+`class Font' отвечает за подключение шрифтов из файла
 IVPT = interactive visual periodic table, название проекта
 
 ------
