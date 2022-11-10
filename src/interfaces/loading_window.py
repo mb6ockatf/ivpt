@@ -8,9 +8,7 @@ class LoadingPage(QMainWindow):
     """Create element's window"""
     def __init__(self):
         super().__init__()
-        size_sheet = {"normal": 20, "large": 30, "giant": 90}
-        font = Font(name="Ubuntu Regular", **size_sheet)
-        QFontDatabase.addApplicationFont(font.path)
+        font = self.get_fonts()
         self.exclamation_font = QFont(font.name, font.large_size)
         width = 500
         height = 400
@@ -19,6 +17,15 @@ class LoadingPage(QMainWindow):
         self.setFixedHeight(height)
         self.setWindowTitle("Loading")
         self.wait_label = QLabel(self)
+        self.create_wait_label()
+
+    def get_fonts(self):
+        size_sheet = {"normal": 20, "large": 30, "giant": 90}
+        font = Font(name="Ubuntu Regular", **size_sheet)
+        QFontDatabase.addApplicationFont(font.path)
+        return font
+
+    def create_wait_label(self):
         self.wait_label.resize(300, 300)
         self.wait_label.setText("Please wait")
         self.wait_label.move(60, 30)

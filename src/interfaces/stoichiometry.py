@@ -56,7 +56,6 @@ class StoichiometryPage(QMainWindow):
         super().__init__()
         width = 1200
         height = 800
-        self.slots = 10
         size_sheet = {"normal": 20, "large": 30, "giant": 90}
         self.setGeometry(300, 200, width, height)
         self.setWindowTitle("Stoichiometry")
@@ -70,24 +69,33 @@ class StoichiometryPage(QMainWindow):
         self.rows_count = 0
         self.rows = []
         self.mass_column_label = QLabel(self)
-        self.mass_column_label.setText("mass")
-        self.mass_column_label.move(420, 20)
-        self.mass_column_label.setFont(self.regular_font)
         self.atom_column_label = QLabel(self)
-        self.atom_column_label.setText("atoms")
-        self.atom_column_label.move(600, 20)
-        self.atom_column_label.setFont(self.regular_font)
         self.eval_button = QPushButton("eval", self)
-        self.eval_button.resize(100, 100)
-        self.eval_button.move(800, 600)
-        self.eval_button.show()
         self.eval_button.clicked.connect(lambda: self.count_mass(self.rows))
         self.eval_button.clicked.connect(lambda: self.count_atoms(self.rows))
         self.add_row_btn = QPushButton("+", self)
+        self.create_column_labels()
+        self.create_eval_button()
+        self.create_add_row_button()
+        self.draw_line()
+
+    def create_column_labels(self):
+        self.mass_column_label.setText("mass")
+        self.mass_column_label.move(420, 20)
+        self.mass_column_label.setFont(self.regular_font)
+        self.atom_column_label.setText("atoms")
+        self.atom_column_label.move(600, 20)
+        self.atom_column_label.setFont(self.regular_font)
+
+    def create_eval_button(self):
+        self.eval_button.resize(100, 100)
+        self.eval_button.move(800, 600)
+        self.eval_button.show()
+
+    def create_add_row_button(self):
         self.add_row_btn.resize(350, 30)
         self.add_row_btn.move(30, 30)
         self.add_row_btn.clicked.connect(self.draw_line)
-        self.draw_line()
 
     def draw_line(self):
         input_frame = QLineEdit(self)

@@ -14,6 +14,7 @@ class Main(QMainWindow):
         self.setWindowTitle("Periodic table of elements")
         self.config = configuration()
         self.database = DatabaseSelect(self.config)
+        self.stoichiometry_button = QPushButton("Stoichiometry", self)
         self.widgets = []
         self.buttons = []
         self.init_ui()
@@ -58,7 +59,6 @@ class Main(QMainWindow):
                 self.btn.clicked.connect(self.open_element_page)
                 self.buttons += [self.btn]
         self.database.close()
-        self.stoichiometry_button = QPushButton("Stoichiometry", self)
         self.stoichiometry_button.resize(140, 70)
         self.stoichiometry_button.move(1100, 640)
         self.stoichiometry_button.clicked.connect(self.show_stoichiometry_window)

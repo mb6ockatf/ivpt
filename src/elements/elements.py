@@ -85,6 +85,5 @@ class ElementsTable(ElementsGroupsInfo):
             if not number:
                 continue
             wiki_link = "https://en.wikipedia.org/wiki/" + j.name
-            data = {"number":    number,
-                    "wiki_link": wiki_link}
+            data = {"number": number, "wiki_link": wiki_link}
             yield data

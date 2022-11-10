@@ -39,8 +39,8 @@ class Font:
 
 	@normal_size.setter
 	def normal_size(self, size: int):
-		t = str(type(size))
-		if t != "int":
+		size_string = str(type(size))
+		if size_string != "int":
 			return
 		if size <= 0:
 			return
@@ -52,8 +52,8 @@ class Font:
 
 	@large_size.setter
 	def large_size(self, size: int):
-		t = str(type(size))
-		if t != "int":
+		size_string = str(type(size))
+		if size_string != "int":
 			return
 		if size < self.normal_size:
 			return
