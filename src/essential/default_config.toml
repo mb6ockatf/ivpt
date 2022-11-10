@@ -1,2 +1,4 @@
 db = "/.IVPT/elements.db"
 log = "/.IVPT/main.log"
+# show chemical compound weight with this accuracy
+accuracy = -4

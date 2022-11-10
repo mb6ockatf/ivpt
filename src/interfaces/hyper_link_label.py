@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """HyperlinkLabel class"""
 from PyQt5.QtWidgets import QLabel
 

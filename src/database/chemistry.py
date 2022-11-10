@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """ChemistryLogicChecks class"""
 from re import search
 

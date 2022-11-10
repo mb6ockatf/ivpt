@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Configuration function"""
 from os import path, mkdir, sep
 from tomli import load, TOMLDecodeError
@@ -30,6 +29,5 @@ def configuration() -> dict:
 	except ValueError as error:
 		print("Invalid config file")
 		print("Probably, there is a problem with float values")
-		print("-" * 100)
 		show_exception(error)
 	return config

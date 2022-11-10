@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """setup_logging function"""
 from os import path, mkdir, sep
 from logging import basicConfig, DEBUG

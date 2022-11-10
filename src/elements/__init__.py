@@ -1,2 +1,2 @@
-from elements.basic import *
-from elements.elements import *
+from .basic import *
+from .elements import *

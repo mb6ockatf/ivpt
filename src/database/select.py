@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """DatabaseSelect class"""
 from .base import DatabaseConnection
 

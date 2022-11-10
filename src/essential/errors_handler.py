@@ -1,4 +1,3 @@
-#!/usr/bin/env python3ErrorHandler
 """Pretty exception stuff"""
 from sys import exc_info
 from traceback import format_exception
