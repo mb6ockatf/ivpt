@@ -39,21 +39,11 @@ if __name__ == '__main__':
         raise DeprecationWarning("Python >= 3.10 required")
     from PyQt5.QtWidgets import QApplication
     from PyQt5.QtGui import QFontDatabase, QFont
-    import os
     from interfaces import Main, LoadingPage, Font
     from elements import ElementsTable
     from essential import setup_logging, configuration
     from database import DatabaseCreateTable, DatabaseInsert, DatabaseSelect
     app = QApplication(sys.argv)
-    """
-    size_sheet = {"normal": 20, "large": 30, "giant": 90}
-    font = Font(name="Ubuntu Regular", **size_sheet)
-    path = os.sep.join(["src", "interfaces", "fonts", "Ubuntu-Regular.ttf"])
-    id = QFontDatabase.addApplicationFont(path)
-    regular_font = QFont(font.name, font.normal_size)
-    symbol_font = QFont(font.name, font.giant_size)
-    exclamation_font = QFont(font.name, font.large_size)"""
-    print(id)
     loading_window = LoadingPage()
     loading_window.show()
     config = configuration()
