@@ -6,6 +6,7 @@ from database import DatabaseSelect
 from essential.config import configuration
 from .element_window import ElementPage
 from .stoichiometry import StoichiometryPage
+# import fonts.font_resources_rc
 
 
 class Main(QMainWindow):
@@ -27,7 +28,7 @@ class Main(QMainWindow):
 
     def get_fonts(self):
         size_sheet = {"normal": 10, "large": 30, "giant": 90}
-        font = Font(name="Ubuntu Regular", **size_sheet)
+        font = Font(name="Ubuntu-Regular", **size_sheet)
         QFontDatabase.addApplicationFont(font.path)
         return font
 

@@ -32,7 +32,7 @@ class Font:
 
 	@property
 	def path(self) -> str:
-		path_args = ["src", "interfaces", "fonts", self.file_name]
+		path_args = ["fonts", self.file_name]
 		return os.sep.join(path_args)
 
 	@property

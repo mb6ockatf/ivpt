@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Main module"""
+# import fonts.font_resources_rc
 
 
 def fill_database_tables(config_object: dict):
@@ -21,16 +22,6 @@ def fill_database_tables(config_object: dict):
     for row in table.get_links():
         sql_executor.insert_links(**row)
     sql_executor.close()
-
-
-def pip_install_package(package: str) -> int:
-    """Install package with pip if not installed"""
-    try:
-        __import__(package)
-    except ImportError:
-        query = [sys.executable, "-m", "pip", "install", package, "--quiet"]
-        exit_code = subprocess.check_call(args=query)
-        return exit_code
 
 
 if __name__ == '__main__':
