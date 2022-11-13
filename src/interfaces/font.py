@@ -1,4 +1,5 @@
 """Font class"""
+import os
 
 
 class Font:
@@ -31,43 +32,17 @@ class Font:
 
 	@property
 	def path(self) -> str:
-		return "src/interfaces/fonts/" + self.file_name
+		path_args = ["src", "interfaces", "fonts", self.file_name]
+		return os.sep.join(path_args)
 
 	@property
 	def normal_size(self) -> int:
 		return self._normal_size
 
-	@normal_size.setter
-	def normal_size(self, size: int):
-		size_string = str(type(size))
-		if size_string != "int":
-			return
-		if size <= 0:
-			return
-		self._normal_size = size
-
 	@property
 	def large_size(self) -> int:
 		return self._large_size
 
-	@large_size.setter
-	def large_size(self, size: int):
-		size_string = str(type(size))
-		if size_string != "int":
-			return
-		if size < self.normal_size:
-			return
-		self._large_size = size
-
 	@property
 	def giant_size(self) -> int:
 		return self._giant_size
-
-	@giant_size.setter
-	def giant_size(self, size: int):
-		t = str(type(size))
-		if t != "int":
-			return
-		if size < self.large_size():
-			return
-		self._giant_size = size

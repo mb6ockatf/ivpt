@@ -37,19 +37,23 @@ if __name__ == '__main__':
     import sys
     if sys.version_info < (3, 10):
         raise DeprecationWarning("Python >= 3.10 required")
-    import subprocess
-    from interfaces import Main, LoadingPage
+    from PyQt5.QtWidgets import QApplication
+    from PyQt5.QtGui import QFontDatabase, QFont
+    import os
+    from interfaces import Main, LoadingPage, Font
     from elements import ElementsTable
     from essential import setup_logging, configuration
     from database import DatabaseCreateTable, DatabaseInsert, DatabaseSelect
-    with open("requirements.txt", "r", encoding="utf-8") as file:
-        contents = file.readlines()
-    contents = [*map(lambda j: j.rstrip(), contents)]
-    for package_name in contents:
-        if "PyQt" in package_name:
-            pip_install_package(package_name)
-    from PyQt5.QtWidgets import QApplication
     app = QApplication(sys.argv)
+    """
+    size_sheet = {"normal": 20, "large": 30, "giant": 90}
+    font = Font(name="Ubuntu Regular", **size_sheet)
+    path = os.sep.join(["src", "interfaces", "fonts", "Ubuntu-Regular.ttf"])
+    id = QFontDatabase.addApplicationFont(path)
+    regular_font = QFont(font.name, font.normal_size)
+    symbol_font = QFont(font.name, font.giant_size)
+    exclamation_font = QFont(font.name, font.large_size)"""
+    print(id)
     loading_window = LoadingPage()
     loading_window.show()
     config = configuration()

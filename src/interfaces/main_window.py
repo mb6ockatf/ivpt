@@ -1,5 +1,7 @@
 """Main window class"""
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
+from PyQt5.QtGui import QFontDatabase, QFont
+from .font import Font
 from database import DatabaseSelect
 from essential.config import configuration
 from .element_window import ElementPage
@@ -10,6 +12,10 @@ class Main(QMainWindow):
     """Create perodic table window"""
     def __init__(self):
         super().__init__()
+        font = self.get_fonts()
+        self.regular_font = QFont(font.name, font.normal_size)
+        self.symbol_font = QFont(font.name, font.giant_size)
+        self.exclamation_font = QFont(font.name, font.large_size)
         self.setGeometry(0, 0, 1280, 740)
         self.setWindowTitle("Periodic table of elements")
         self.config = configuration()
@@ -19,17 +25,25 @@ class Main(QMainWindow):
         self.buttons = []
         self.init_ui()
 
+    def get_fonts(self):
+        size_sheet = {"normal": 10, "large": 30, "giant": 90}
+        font = Font(name="Ubuntu Regular", **size_sheet)
+        QFontDatabase.addApplicationFont(font.path)
+        return font
+
     def init_ui(self):
         """Set up the window"""
         for column in range(18):
             text = str(column + 1)
             self.btn = QLabel(text, self)
             self.btn.move(170 + 60 * column, 20)
+            self.btn.setFont(self.regular_font)
             self.buttons += [self.btn]
         for row in range(7):
             text = str(row + 1)
             self.btn = QLabel(text, self)
             self.btn.move(110, 80 + 60 * row)
+            self.btn.setFont(self.regular_font)
             self.buttons += [self.btn]
         basic_info = self.database.select_basic_info()
         table = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -44,6 +58,7 @@ class Main(QMainWindow):
                 number, name = basic_info.pop(0)
                 btn_text = str(number) + " " + str(name)
                 self.btn = QPushButton(btn_text, self)
+                self.btn.setFont(self.regular_font)
                 self.btn.resize(60, 60)
                 match number:
                     case _ if 57 < number < 72:
