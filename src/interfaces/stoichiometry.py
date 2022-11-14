@@ -25,8 +25,6 @@ class SumRow:
     def count_mass(self):
         """Set masses label's text"""
         text = self.input.text()
-        text = text.upper()
-        self.input.setText(text)
         accuracy = int(self.config["accuracy"])
         try:
             formula = Formula(text)
@@ -39,8 +37,6 @@ class SumRow:
 
     def count_atoms(self):
         """Set atoms label's text"""
-        text = self.input.text()
-        self.input.setText(text.upper())
         text = self.input.text()
         try:
             formula = Formula(text)
