@@ -1,18 +1,16 @@
 """ElementsTable class"""
-import periodictable as PT
+from .periodic_table import PeriodicTable
 from .basic import ElementsGroupsInfo
 
 
 class ElementsTable(ElementsGroupsInfo):
     """"Get information about chemical elements"""
     def __init__(self):
-        self.elements = PT.elements
+       self.elements = PeriodicTable()
 
     def get_basic_info(self):
         """Get elements' symbols and number"""
         for j in self.elements:
-            if j.name == "neutron":
-                continue
             data = {"number": j.number,
                     "abb":    j.symbol}
             yield data
@@ -21,8 +19,6 @@ class ElementsTable(ElementsGroupsInfo):
         """Get element's name, group, weight and period"""
         for j in self.elements:
             number = j.number
-            if not number:
-                continue
             match number:
                 case _ if number in self.alkali_metal:
                     group = "alkali-metal"
@@ -60,8 +56,6 @@ class ElementsTable(ElementsGroupsInfo):
         """Get some other stuff"""
         for j in self.elements:
             number = j.number
-            if not number:
-                continue
             energy_level = None
             for n, energy_level in self.energy_levels.items():
                 if number in energy_level:
@@ -82,8 +76,6 @@ class ElementsTable(ElementsGroupsInfo):
         """Get wiki links for every element"""
         for j in self.elements:
             number = j.number
-            if not number:
-                continue
             wiki_link = "https://en.wikipedia.org/wiki/" + j.name
             data = {"number": number, "wiki_link": wiki_link}
             yield data
