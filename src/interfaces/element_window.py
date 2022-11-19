@@ -82,11 +82,11 @@ class ElementPage(QWidget):
         self.period_label.setText("Period:")
         self.period_label.move(30, 190)
         self.period_label.setFont(self.regular_font)
-        
+
         self.group_label.setText("Group:")
         self.group_label.move(30, 160)
         self.group_label.setFont(self.regular_font)
-        
+
         self.mass_label.setText("Mass:")
         self.mass_label.move(30, 130)
         self.mass_label.setFont(self.regular_font)

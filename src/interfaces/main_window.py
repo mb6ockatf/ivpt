@@ -6,7 +6,6 @@ from database import DatabaseSelect
 from essential.config import configuration
 from .element_window import ElementPage
 from .stoichiometry import StoichiometryPage
-# import fonts.font_resources_rc
 
 
 class Main(QMainWindow):

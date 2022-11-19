@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Main module"""
-# import fonts.font_resources_rc
 
 
 def fill_database_tables(config_object: dict):
@@ -61,3 +60,4 @@ if __name__ == '__main__':
     main_window = Main()
     main_window.show()
     sys.exit(app.exec())
+
