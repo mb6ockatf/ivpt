@@ -1,4 +1,5 @@
-numpy==1.23.5
-PyQt5==5.15.7
-tomli==2.0.1
-molmass==2022.12.9
+numpy
+PyQt5
+tomli
+molmass
+
