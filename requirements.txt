@@ -2,3 +2,4 @@ numpy
 PyQt5
 tomli
 molmass
+
