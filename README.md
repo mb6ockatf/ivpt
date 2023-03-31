@@ -16,7 +16,6 @@ USAGE HOWTO
 
 ![palladium picture](https://user-images.githubusercontent.com/79650307/229216159-484896e2-141a-4149-8041-f92f8c643c75.png)
 
-
 2. You suddenly need a mass of some acid?
 No problem - click on the `Stoichiometry` button, enter any formula and press `eval`
 
