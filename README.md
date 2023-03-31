@@ -3,8 +3,8 @@ Interactive &amp; visual periodic table
 
 This graphical app is to help people studying chemistry with calculations.
 
-Please, be ready that it't take up to a minute to launch at the first time.
-It's going to be faster if you have SSD instead of HDD.
+Please, be ready that it takes up to a minute to launch at the first time.
+It's going to be faster if you have SSD, not HDD.
 
 ## Usage HOWTO
 
