@@ -17,6 +17,7 @@ class Main(QMainWindow):
         self.symbol_font = QFont(font.name, font.giant_size)
         self.exclamation_font = QFont(font.name, font.large_size)
         self.setGeometry(0, 0, 1280, 740)
+        self.setStyleSheet("background-color: #E6E6FA;")
         self.setWindowTitle("Periodic table of elements")
         self.config = configuration()
         self.database = DatabaseSelect(self.config)

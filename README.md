@@ -1,22 +1,22 @@
-# IVPT
-Interactive &amp; visual periodic table
+IVPT
+==
+Interactive &amp; visual periodic table written on PyQT5.
 
-This graphical app is to help people studying chemistry with calculations.
+BASIC
+--
+![table](https://user-images.githubusercontent.com/79650307/229216014-198ab642-c9e5-4fab-9b9c-a70afcfbe5b8.png)
 
-Please, be ready that it takes up to a minute to launch at the first time.
-It's going to be faster if you have SSD, not HDD.
+This GUI application may help you with studying chemistry
+(especially with calculations)
 
-## Usage HOWTO
+USAGE HOWTO
+--
 
-Install all the packeges listed in `requirements.txt`.
-After that, you can run the program: `python3 src/main.py`
+1. Imagine you're doing some chemistry homework, you need to know the mass of Palladium - you can just start the program, click on the element and you're done!
 
-## Contribution
+![palladium picture](https://user-images.githubusercontent.com/79650307/229216159-484896e2-141a-4149-8041-f92f8c643c75.png)
 
-Checkout [CONTRIBUTING.md](CONTRIBUTING.md) for more.
+2. You suddenly need a mass of some acid?
+No problem - click on the `Stoichiometry` button, enter any formula and press `eval`
 
-
-Written on PyQT5.
-
-Sun 01 Jan 2023 09:48:38 PM MSK
-
+![stoichiometry](https://user-images.githubusercontent.com/79650307/229216267-b56f7acc-7c5f-4573-a3ed-8a799b7294cf.png)
