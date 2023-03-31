@@ -54,6 +54,7 @@ class StoichiometryPage(QMainWindow):
         height = 800
         size_sheet = {"normal": 20, "large": 30, "giant": 90}
         self.setGeometry(300, 200, width, height)
+        self.setStyleSheet("background-color: #E6E6FA;")
         self.setWindowTitle("Stoichiometry")
         font = Font(name="Ubuntu Regular", **size_sheet)
         QFontDatabase.addApplicationFont(font.path)
