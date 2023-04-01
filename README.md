@@ -14,7 +14,8 @@ USAGE HOWTO
 
 1. Imagine you're doing some chemistry homework, you need to know the mass of Palladium - you can just start the program, click on the element and you're done!
 
-![palladium picture](https://user-images.githubusercontent.com/79650307/229216159-484896e2-141a-4149-8041-f92f8c643c75.png)
+![image of Palladium](https://user-images.githubusercontent.com/79650307/229273218-6435a91a-599d-4c75-a03a-fba09b56df3b.png)
+
 
 2. You suddenly need a mass of some acid?
 No problem - click on the `Stoichiometry` button, enter any formula and press `eval`
