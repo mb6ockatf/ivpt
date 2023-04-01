@@ -52,6 +52,7 @@ class ElementPage(QWidget):
         width = 500
         height = 400
         self.setGeometry(300, 300, width, height)
+        self.setStyleSheet("background-color: #E6E6FA;")
         self.setFixedWidth(width)
         self.setFixedHeight(height)
         self.setWindowTitle(self.element)
