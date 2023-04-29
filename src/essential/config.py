@@ -4,12 +4,9 @@ from .errors_handler import show_exception
 
 
 def configuration() -> dict:
-    home = os.path.expanduser("~")
-    config_path = [".IVPT", "config.toml"]
-    config_path = home + os.sep + os.sep.join(config_path)
+    config_path = os.sep.join([os.path.expanduser("~"), ".IVPT", "config.toml"])
     config = None
-    default_config = ["src", "essential", "default_config.toml"]
-    default_config = os.sep.join(default_config)
+    default_config = os.sep.join(["src", "essential", "default_config.toml"])
     path_items_list = list(config_path.split(os.sep))[1:]
     for index in range(len(path_items_list)):
         cur_dir = os.sep + os.sep.join(path_items_list[0: index])
