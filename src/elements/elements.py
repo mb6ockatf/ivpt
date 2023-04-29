@@ -8,8 +8,7 @@ class ElementsTable(ElementsGroupsInfo):
 
     def get_basic_info(self):
         for j in self.elements:
-            data = {"number": j.number, "abb": j.symbol}
-            yield data
+            yield {"number": j.number, "abb": j.symbol}
 
     def get_basic_params(self):
         for j in self.elements:

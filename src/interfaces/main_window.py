@@ -3,6 +3,7 @@ from PyQt5.QtGui import QFontDatabase, QFont
 from .font import Font
 from database import DatabaseSelect
 from essential.config import configuration
+from elements import ElementsGroupsInfo
 from .element_window import ElementPage
 from .stoichiometry import StoichiometryPage
 
@@ -54,9 +55,28 @@ class Main(QMainWindow):
                 if not column:
                     continue
                 number, name = basic_info.pop(0)
+                groups = ElementsGroupsInfo()
+                color = "rgb(47,77,71)"
+                if number in groups.alkali_metal:
+                    color = "rgb(36,77,87)"
+                elif number in groups.alkaline_earth_metals:
+                    color = "rgb(98,46,57)"
+                elif number in groups.metalloid:
+                    color = "rgb(82,62,27)"
+                elif number in groups.reactive_nonmetals:
+                    color = "rgb(42,65,101)"
+                elif number in groups.transition_metals:
+                    color = "rgb(67,60,101)"
+                elif number in groups.noble_gas:
+                    color = "rgb(98,56,66)"
+                elif number in groups.actinoid:
+                    color = "rgb(97,59,40)"
+                elif number in groups.lanthanoid:
+                    color = "rgb(0,74,119)"
                 btn_text = str(number) + " " + str(name)
                 self.btn = QPushButton(btn_text, self)
                 self.btn.setFont(self.regular_font)
+                self.btn.setStyleSheet(f"background-color: {color}")
                 self.btn.resize(60, 60)
                 match number:
                     case _ if 57 < number < 72:

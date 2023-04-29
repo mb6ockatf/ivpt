@@ -17,14 +17,11 @@ class ElementsGroupsInfo:
 
     @property
     def metalloid(self) -> tuple:
-        return (5, 14, 32, 52)
+        return (5, 14, 32, 33, 51, 52)
 
     @property
     def reactive_nonmetals(self) -> set:
-        result = {1, 10, 18, 36, 54, 8}
-        result = result | {53, 35, 17, 9}
-        result = result | {16, 8}
-        return result
+        return {*range(6,10)} | {*range(15, 18)} | {34, 35, 53}
 
     @property
     def transition_metals(self) -> set:
