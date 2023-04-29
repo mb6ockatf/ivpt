@@ -1,10 +1,8 @@
-"""Element's numbers and abbreviations"""
 from dataclasses import dataclass
 
 
 @dataclass
 class Element:
-    """Storage object for element's abbreviation and mass"""
     number: int
     symbol: str
     mass: float
@@ -12,8 +10,6 @@ class Element:
 
 
 class PeriodicTable:
-    """Get periodic table elements"""
-
     def __init__(self):
         self.current_index = 0
         self.table = []

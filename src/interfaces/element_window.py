@@ -8,7 +8,6 @@ from .font import Font
 
 
 class ElementPage(QWidget):
-    """Create element's window"""
     def __init__(self, element: str, number: int):
         super().__init__()
         font = self.get_fonts()
@@ -48,7 +47,6 @@ class ElementPage(QWidget):
 
 
     def init_ui(self):
-        """Show data labels"""
         width = 500
         height = 400
         self.setGeometry(300, 300, width, height)
@@ -79,7 +77,6 @@ class ElementPage(QWidget):
         self.period_value_label.setFont(self.regular_font)
 
     def show_static_labels(self):
-        """Show static labels"""
         self.period_label.setText("Period:")
         self.period_label.move(30, 190)
         self.period_label.setFont(self.regular_font)
@@ -97,7 +94,6 @@ class ElementPage(QWidget):
         self.energy_level_label.setFont(self.regular_font)
 
     def show_congregation(self):
-        """Show extended element's information"""
         data = self.database.select_congregation(self.number)
         data = data[0]
         data = {"metal":         data[0],
@@ -129,7 +125,6 @@ class ElementPage(QWidget):
             self.semiconductor_label.setFont(self.exclamation_font)
 
     def show_link(self):
-        """Show link to element's wiki page"""
         data_tuple = self.database.select_links(self.number)[0]
         data = data_tuple[0]
         link_template = "<a href={0}>{1}</a>"

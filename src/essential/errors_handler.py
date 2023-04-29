@@ -1,11 +1,9 @@
-"""Pretty exception stuff"""
 from sys import exc_info
 from traceback import format_exception
 from logging import error
 
 
 def show_exception(exception_object):
-    """Print pretty traceback"""
     exc_type, exc_value, exc_tb = exc_info()
     pretty_exception = format_exception(exc_type, exc_value, exc_tb)
     error(pretty_exception)

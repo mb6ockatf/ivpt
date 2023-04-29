@@ -1,4 +1,3 @@
-"""Main window class"""
 from PyQt5.QtWidgets import QMainWindow, QPushButton, QLabel
 from PyQt5.QtGui import QFontDatabase, QFont
 from .font import Font
@@ -9,7 +8,6 @@ from .stoichiometry import StoichiometryPage
 
 
 class Main(QMainWindow):
-    """Create perodic table window"""
     def __init__(self):
         super().__init__()
         font = self.get_fonts()
@@ -33,7 +31,6 @@ class Main(QMainWindow):
         return font
 
     def init_ui(self):
-        """Set up the window"""
         for column in range(18):
             text = str(column + 1)
             self.btn = QLabel(text, self)
@@ -80,13 +77,11 @@ class Main(QMainWindow):
         self.stoichiometry_button.clicked.connect(self.show_stoichiometry_window)
 
     def show_stoichiometry_window(self):
-        """Open stoichiometry operations' window"""
         widget = StoichiometryPage()
         widget.show()
         self.widgets += [widget]
 
     def open_element_page(self):
-        """Open element's page window when button is pressed"""
         sender = self.sender()
         widget = ElementPage(sender.name, sender.number)
         widget.show()

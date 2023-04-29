@@ -1,37 +1,26 @@
-"""ElementsGroupsInfo class"""
-
-
 class ElementsGroupsInfo:
-    """Gather element numbers into groups"""
-
     @property
     def actinoid(self) -> set:
-        """Get actinoids' range of numbers"""
         return {*range(89, 104)}
 
     @property
     def lanthanoid(self) -> set:
-        """Get lanthanoids' range of numbers"""
         return {*range(57, 72)}
 
     @property
     def alkali_metal(self) -> tuple:
-        """Get alkali-metals' range of numbers"""
         return (3, 11, 19, 37, 55, 87)
 
     @property
     def alkaline_earth_metals(self) -> tuple:
-        """Get alkaline-earth-metals' range of numbers"""
         return (4, 12, 20, 38, 56, 88)
 
     @property
     def metalloid(self) -> tuple:
-        """Get metalloids' range of numbers"""
         return (5, 14, 32, 52)
 
     @property
     def reactive_nonmetals(self) -> set:
-        """Get reactive nonmetals' range of numbers"""
         result = {1, 10, 18, 36, 54, 8}
         result = result | {53, 35, 17, 9}
         result = result | {16, 8}
@@ -39,7 +28,6 @@ class ElementsGroupsInfo:
 
     @property
     def transition_metals(self) -> set:
-        """Get transition metals' range of numbers"""
         result = {*range(21, 31)}
         result = result | {*range(39, 49)}
         result = result | {*range(71, 81)}
@@ -48,26 +36,21 @@ class ElementsGroupsInfo:
 
     @property
     def noble_gas(self) -> tuple:
-        """Get noble gases' range of numbers"""
         return (2, 10, 18, 36, 54, 86, 118)
 
     @property
     def pnictogen(self) -> tuple:
-        """Get pnictogens' range of numbers"""
         return (7, 15, 33, 51, 83, 115)
 
     @property
     def chalcogen(self) -> tuple:
-        """Get chalcogens' range of numbers"""
         return (8, 16, 34, 52, 84, 116)
 
     def increment(self, number: int) -> int:
-        """Increment number by 1"""
         return number + 1
 
     @property
     def periods(self) -> dict:
-        """Get 18 periods' range of numbers"""
         result = {}
         increment = self.increment
         result["1"] = {1, 3, 11, 19, 37, 55, 87}
@@ -95,7 +78,6 @@ class ElementsGroupsInfo:
 
     @property
     def not_metals(self) -> set:
-        """Get not-metals' range of elements"""
         not_metals = self.periods["18"]
         not_metals = not_metals | self.periods["17"]
         not_metals = not_metals | {1, 8, 16, 34, 7, 15, 6}
@@ -104,12 +86,10 @@ class ElementsGroupsInfo:
 
     @property
     def amphoteric(self) -> tuple:
-        """Get amphoteric elements' range of numbers"""
         return (29, 30, 13, 4, 50, 82)
 
     @property
     def energy_levels(self) -> set:
-        """Get elements' energy levels"""
         result = {}
         result["1"] = {1, 2}
         result["2"] = {*range(3, 11)}
@@ -122,10 +102,8 @@ class ElementsGroupsInfo:
 
     @property
     def gases(self) -> tuple:
-        """Get gas-elements' numbers"""
         return (1, 7, 8, 9, 17)
 
     @property
     def semiconductors(self) -> tuple:
-        """Get semiconductors' numbers"""
         return (14, 16, 32, 33, 50)

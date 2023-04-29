@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
-"""Main module"""
 
 
 def fill_database_tables(config_object: dict):
-    """
-    Fill all database's tables with contents
-
-    :config_object: Dictionary, containing database file address as db key
-    """
     if not config_object:
         raise ValueError("No configuration object has been specified")
     table = ElementsTable()
@@ -25,8 +19,8 @@ def fill_database_tables(config_object: dict):
 
 if __name__ == '__main__':
     import sys
-    if sys.version_info < (3, 10):
-        raise DeprecationWarning("Python >= 3.10 required")
+    if sys.version_info < (3, 11):
+        raise DeprecationWarning("Python >= 3.11 required")
     from PyQt5.QtWidgets import QApplication
     from PyQt5.QtGui import QFontDatabase, QFont
     from interfaces import Main, LoadingPage, Font
@@ -60,4 +54,3 @@ if __name__ == '__main__':
     main_window = Main()
     main_window.show()
     sys.exit(app.exec())
-

@@ -1,11 +1,9 @@
-"""LoadingPage class"""
 from PyQt5.QtWidgets import QMainWindow, QLabel
 from PyQt5.QtGui import QFontDatabase, QFont
 from .font import Font
 
 
 class LoadingPage(QMainWindow):
-    """Create element's window"""
     def __init__(self):
         super().__init__()
         font = self.get_fonts()
