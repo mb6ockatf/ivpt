@@ -1,0 +1,676 @@
+commit 224f5ac725ef92064099973591a3a8beff927928
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sat Aug 10 16:04:05 2024 +0300
+
+    chore(CONTRIBUTING): added
+
+commit bf116e66157efe465eefaf6ebe893264c5c71e17
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Fri Aug 9 20:57:09 2024 +0300
+
+    chore(COPYING): AGPL
+
+commit bd1d2a5469b5622d45b19e5013461d5aa9904837
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Tue Mar 19 16:22:13 2024 +0300
+
+    chore: md -> adoc
+
+commit 39b8f2655e7c2a2ef3afd89b428bdd768521435e
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sun Mar 17 14:43:09 2024 +0300
+
+    refactor: setup_dev.sh -> makefile
+
+commit 8630ac7b005452052fcfcc4151bed3b65930f865
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri May 12 20:15:47 2023 +0300
+
+    fix(LICENSE): change to AGPL 3.0
+    
+    resolve #30
+
+commit 9b2bd1140d482e655892723ee9adc96699ccda1e
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Apr 29 23:18:13 2023 +0300
+
+    chore: update README.md
+
+commit 711e3ef997286c63ab2e44a572c033622feb0369
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Apr 29 22:51:58 2023 +0300
+
+    feat(ux): add element colors
+    
+    resolves #23
+
+commit 4f5802f8a446e2b7f6d5056ba2f5b1bfa9c9254e
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Apr 29 22:24:44 2023 +0300
+
+    refactor(essential/config.py)
+
+commit cd3b8fcf38ee1e0b43fa5914e274f44cf57a99fa
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Apr 29 22:01:16 2023 +0300
+
+    refactor(everything)
+
+commit aa208b03bb4b4acacebcd6ce3c56e30626136982
+Author: VANECK <vingving648@gmail.com>
+Date:   Sat Apr 1 11:31:02 2023 +0300
+
+    added background for element window & updated photo (#27)
+    
+    * add background
+    
+    Co-authored-by: mb6ockatf <mdddmmmm@yandex.ru>
+    Co-authored-by: IvanIsak2000 <vingving648@gmail.com>
+    
+    * update photo
+    
+    ---------
+    
+    Co-authored-by: mb6ockatf <mdddmmmm@yandex.ru>
+
+commit c6993def2c672b1087c853d6ece687f253b46f78
+Author: VANECK <79650307+IvanIsak2000@users.noreply.github.com>
+Date:   Fri Mar 31 23:58:23 2023 +0300
+
+    Update background color & README.md (#25)
+    
+    * improvement
+    
+    * added BASIC and HOWTO USE
+    
+    * add background color
+    
+    * add background color
+    
+    * update photos
+    
+    * style(README.md): improve language
+    
+    rephrase some things
+    
+    Co-authored-by: IvanIsak2000 <SOMEEMAIL@EXAMPLE.COM>
+    
+    ---------
+    
+    Co-authored-by: mb6ockatf <mb6ockatf@relay.firefox.com>
+    Co-authored-by: IvanIsak2000 <SOMEEMAIL@EXAMPLE.COM>
+
+commit 24a858c438ebd218989eb09c2e5128dea7668fff
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Mar 31 21:41:24 2023 +0300
+
+    add dev environment script, fix misprint (#24)
+    
+    * add: dev environment script
+    
+    * fix(README.md): misprint
+
+commit 6246ae0938e6f780f90ef79eb98153bd145e41a6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Jan 11 01:22:03 2023 +0300
+
+    Delete project.odp
+
+commit c11799d974abe8890b175f495532257314389f2f
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Jan 11 01:20:14 2023 +0300
+
+    Delete dependabot.yml
+
+commit 126827395490287a5599c39a2c359c0abaa63c38
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Wed Jan 11 01:19:34 2023 +0300
+
+    Bump molmass from 2022.10.18 to 2022.12.9 (#21)
+    
+    Bumps [molmass](https://github.com/cgohlke/molmass) from 2022.10.18 to 2022.12.9.
+    - [Release notes](https://github.com/cgohlke/molmass/releases)
+    - [Commits](https://github.com/cgohlke/molmass/compare/v2022.10.18...v2022.12.9)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: molmass
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+commit 81a8663214703090a6f25f0fe2077f798b728e13
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Jan 1 21:48:10 2023 +0300
+
+    Update README.md
+
+commit 5caa6b16e5ddf39c8b49a487ddb2f6b83f51a580
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Jan 1 21:46:42 2023 +0300
+
+    remove strict package requirements
+
+commit 5a1105a7bf5262822f15c79176340562098d501f
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sun Jan 1 15:27:39 2023 +0300
+
+    Bump numpy from 1.23.5 to 1.24.1 (#19)
+    
+    Bumps [numpy](https://github.com/numpy/numpy) from 1.23.5 to 1.24.1.
+    - [Release notes](https://github.com/numpy/numpy/releases)
+    - [Changelog](https://github.com/numpy/numpy/blob/main/doc/RELEASE_WALKTHROUGH.rst)
+    - [Commits](https://github.com/numpy/numpy/compare/v1.23.5...v1.24.1)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: numpy
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+commit 11d1fb4c080a14a4cc0f11062ff277d740b50cb6
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sun Jan 1 15:27:13 2023 +0300
+
+    Bump molmass from 2022.10.18 to 2022.12.9 (#20)
+    
+    Bumps [molmass](https://github.com/cgohlke/molmass) from 2022.10.18 to 2022.12.9.
+    - [Release notes](https://github.com/cgohlke/molmass/releases)
+    - [Commits](https://github.com/cgohlke/molmass/compare/v2022.10.18...v2022.12.9)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: molmass
+      dependency-type: direct:production
+      update-type: version-update:semver-minor
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+commit 8d32c09f3731f95627749aafa308d1265bf76ea0
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Dec 9 20:35:53 2022 +0300
+
+    Bump numpy from 1.23.4 to 1.23.5 (#18)
+    
+    Bumps [numpy](https://github.com/numpy/numpy) from 1.23.4 to 1.23.5.
+    - [Release notes](https://github.com/numpy/numpy/releases)
+    - [Changelog](https://github.com/numpy/numpy/blob/main/doc/RELEASE_WALKTHROUGH.rst)
+    - [Commits](https://github.com/numpy/numpy/compare/v1.23.4...v1.23.5)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: numpy
+      dependency-type: direct:production
+      update-type: version-update:semver-patch
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+    Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+commit 866e65c139a4573a49d87131de2563b848e4913a
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 19 17:40:54 2022 +0300
+
+    feat: config checks (#13)
+
+commit 8ace163fcbc0ac37c477deb4ac3c1a2d584a2d95
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 19 17:19:28 2022 +0300
+
+    remove unnecessary dependancy mentions
+
+commit 6f95ab4691d5376f5f171016fad6d73963dfce21
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 19 17:11:34 2022 +0300
+
+    fix: get rid of external dependency
+
+commit fd7b7fcca08fb5a71fc0cd1ab165152701f941f6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 19 17:10:05 2022 +0300
+
+    refactor: remove useless comments
+
+commit 5c618ec2cd13a6d99a3900bb45c94dbb9ee62cff
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 19 13:43:51 2022 +0300
+
+    update README.md
+
+commit d5cfeada5e017e88abdd46d428e51a6d71d01b66
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Nov 14 17:37:32 2022 +0300
+
+    add: presentation file
+
+commit 789beb6c43bc1e98415555f9cd7402393163f04a
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Nov 14 16:30:23 2022 +0300
+
+    fix: element's name is always upper
+
+commit 366ed2a9dec459d339bf9e1473da6531295f44fa
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 13 23:57:47 2022 +0300
+
+    one more font fix
+
+commit 3cd7ba9258333d627a9b02a0cdd41a3b5928cb4a
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 13 23:04:37 2022 +0300
+
+    fix: config loading on Windows
+
+commit a05a62f0422493f5ebdccf16567450daed1f3801
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 13 22:51:25 2022 +0300
+
+    remove: auto pip install
+
+commit 68d17955ed64168a98fc92ba6ec25bf7b4669f4b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Thu Nov 10 16:45:33 2022 +0300
+
+    Create LICENSE
+
+commit b269f87cdcc80488e4d087c5bb91b9f7ad661409
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Thu Nov 10 16:32:11 2022 +0300
+
+    release v0.0.1
+
+commit fc64be27679c2ed547f99fd348d057a662500ef5
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Thu Nov 10 16:29:24 2022 +0300
+
+    UI improvments (#17)
+    
+    * add fonts support
+    
+    * refactor: remove useless shabangs
+    
+    * error
+    
+    * fix: buttons not showing
+    
+    * feat: download pip packages if not installed
+    
+    * feat: stechiometry displays addittional info
+    
+    * refactor
+    
+    * write documentation
+    
+    * update docs
+
+commit 32ccd73b3ab47b3cec481128b624feebe283e30a
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Tue Nov 8 17:48:42 2022 +0300
+
+    embed fonts (#14), remove __init__.py in src/
+
+commit 2629af1589b8aa5fe2412e6165391bd95937fb76
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sun Nov 6 11:59:01 2022 +0300
+
+    Bump periodictable from 1.6.0 to 1.6.1 (#12)
+
+commit 397210f32d2db78544e89803eccc138bd44b42a9
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Nov 6 11:52:12 2022 +0300
+
+    Create dependabot.yml
+
+commit c9dd446557d6448e55f909751b60f7eb087f8629
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 22:29:04 2022 +0300
+
+    fix: docstrings, assigned lambda, attributes
+
+commit de29609f60ab1d5c323d5dde8bdedcb4b98defa9
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 22:26:06 2022 +0300
+
+    fix: docstrings
+
+commit 20554d4b625ea5ec7e33f31143c44e67d495c68d
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 22:24:52 2022 +0300
+
+    refactoring: convert tabs into spaces
+
+commit 3edeb6ee226aea509ce3898f4b626bcdd0256689
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 17:46:58 2022 +0300
+
+    some more folding
+
+commit 0d4b53c6fc20795017d129e4f16fca49343d0a04
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 14:37:28 2022 +0300
+
+    feat: project structure file
+
+commit 6eeae15b99103121c1afbb1f257f0f8ff8f6c06c
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:43:51 2022 +0300
+
+    write main file
+
+commit 3fdaf8730e3a46f9fc2d8cc5a4a5d91e760a6f54
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:43:25 2022 +0300
+
+    feat: graphical interface
+
+commit 15923154aecc61610638ab5a5cc21d826de02248
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:42:39 2022 +0300
+
+    fix: add log file existence check
+
+commit b3d46b22adb2fba20d93e86cfc7105ca2dd61e7c
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:41:52 2022 +0300
+
+    minor refactoring
+
+commit 0002f879d3e68aee95e7593f81377c416fb70159
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:40:45 2022 +0300
+
+    fix: exclude neutron
+
+commit 3425c62941454ce62c73f162409922aeb23bde05
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:39:44 2022 +0300
+
+    fix set union statements
+
+commit 03bd11439bfdb24410244535a47e83de920efdd1
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Nov 5 12:38:22 2022 +0300
+
+    refactoring & minor bugs fixed
+
+commit e92b402bdb44ae9fd44774b739ccf095da708c5c
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:15:33 2022 +0300
+
+    add docstrings to select.py
+
+commit 53d45e072d1ee0f2065a6bf10d91378e00e3bc10
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:14:53 2022 +0300
+
+    fix & refactor insert.py
+    convert INSERT statements into INSERT OR REPLACE
+    make docstrings more useful
+
+commit 7603fdbdcde4cb94b4cd2e8b63ed5cac01491c55
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:13:17 2022 +0300
+
+    create_table methods return tuples now
+
+commit f549f3571362340ad9688ce166c8ed81080ea7d6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:12:10 2022 +0300
+
+    move old chemistry file
+
+commit cdf8f99caca2063c70f9fca2fdb091aa8fc2b8bf
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:10:13 2022 +0300
+
+    fix imports & get_links method
+
+commit a7ac14baec9308fb1fdabeea5cfd10ed165ff7eb
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:09:32 2022 +0300
+
+    fix imports & config in database/base.py
+
+commit bacfaab3ef4737e9ec44b27fa48abf2c318f68a6
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:08:16 2022 +0300
+
+    fix __init__ files
+
+commit 6eb65a0124b8912bce73c3ed8dbd6db0f89a1625
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:07:30 2022 +0300
+
+    confuguration is standalone now
+
+commit da3c99b55293be10993862305fdd8f5427e42577
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 18:05:55 2022 +0300
+
+    add requirenents, specify python version
+
+commit 9c4979eb9180de0b444bceadd5b5e7244a54d946
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 13:42:27 2022 +0300
+
+    update requirements.txt
+
+commit 0f540926a261068e52fcdad78c0fbc6a79038d9a
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:11:53 2022 +0300
+
+    refactor
+    
+    turn the only class method into a standalone funtion
+    imports from other files are already corrected
+
+commit bbc60a7f40f1a5787b9d0d152ea676c4ce96ddef
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:09:30 2022 +0300
+
+    essential: work with periodictable lib
+    
+    now chemical elements' information is gathered via src/elements.py code
+
+commit 6c4f932cc9cfdfcfade07e4863c64f89c2aff4d3
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:08:15 2022 +0300
+
+    fix & refactor db connection code
+
+commit 8c0b10823f3c6ae59f6277c9a5f6f55c09a31f1f
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:07:14 2022 +0300
+
+    fix database tests
+
+commit 50eafa33c0f43a72774f75e28cadecb088d44194
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:05:47 2022 +0300
+
+    correct shabang; remove launch code
+
+commit 581bf22f5e5abf3f07e8951fb402cdca5209e898
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:04:45 2022 +0300
+
+    add default config file
+
+commit a85aa70b7f70ddac972046ecbe098bc9b165863c
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 01:02:44 2022 +0300
+
+    refactoring chemistry.py
+    
+    correct shabang
+    add module & methods docstrings
+    correct asserion comment
+
+commit 3e7ae41dce3e68ab496ef6621cf71f9ccd094edc
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Nov 4 00:58:41 2022 +0300
+
+    refactoring
+    
+    convert tabs into 4 spaces
+    add module and methods docstrings
+    add with expression to i/o operations
+
+commit e0df4b4952aebd81c94614f8416f1e0a4432447d
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:58:39 2022 +0300
+
+    create tests for database
+
+commit 79351610cc0befe7f203a4f569aa7da8acb4932b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:55:41 2022 +0300
+
+    add tomli lib to requirements
+
+commit 5ee93134958b5f09da15a2ba52ea767919934092
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:54:47 2022 +0300
+
+    refactor
+
+commit 10a384e66a805654d0b94c5466008940e53442dc
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:54:16 2022 +0300
+
+    fix touch_config
+
+commit f6be32ec278c96a359793a0d5fca6466d6eed906
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:53:27 2022 +0300
+
+    refactor
+    
+    add typehints and change single-quotes to double-quotes
+
+commit 2d7e1a685227ba15bb8d194dc0ab1d79c2ca1bf7
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:51:39 2022 +0300
+
+    feature: select data from DB
+
+commit c25310ea88f0cd9c5e8210d68eb6403bbfb7c801
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:51:16 2022 +0300
+
+    feature: create DB tables
+
+commit 230920884327b2b12e64f41adf9d61e1340cd7d2
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:50:11 2022 +0300
+
+    now it's possible to add new data to DB
+
+commit 27359baa478e8aa0deda85b0ebc319a57bea5b00
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Mon Oct 31 18:48:18 2022 +0300
+
+    rename file
+    
+    just basic connection class is left
+
+commit 1d088a54288ec623c56cb72adfb2eef1d1fe7e8d
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 14:06:31 2022 +0300
+
+    src/aboba.md
+
+commit fb16bf8d9b19e22107b774c3a29dcdac49f1ed1b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 14:05:18 2022 +0300
+
+    normal gitignore-3
+
+commit deab6c14e124d757199fbf5a3751561517f34d9b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 14:02:46 2022 +0300
+
+    remove IDE files
+
+commit 4d1b0d82ee50be2c9df69f8c874418bedfa679aa
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 14:02:14 2022 +0300
+
+    normal gitignore-2
+
+commit 2891a3e5edd69c2b9adf84e0e3c36c94a8d16620
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 14:00:19 2022 +0300
+
+    create normal .gitignore
+
+commit 50809cf557baa45f8d1b0f47ec00ee5f7f6422f8
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:57:59 2022 +0300
+
+    rm .gitignore
+
+commit 4f7cf78d663997a091d7cd859b549a6896fc421f
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:56:55 2022 +0300
+
+    remove pycache
+
+commit b95c28cd23c293c527fcdb2f63225e63b65c86ef
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:56:23 2022 +0300
+
+    git ignore database pycache dir
+
+commit 1e994c5c8b8b66265da749df141f7981a93abba8
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:54:11 2022 +0300
+
+    git ignore database pycache dir
+
+commit a7a19d2cf604bea009e8ce536aa3c60cdcd8e30e
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:51:28 2022 +0300
+
+    git ignore database pycache dir
+
+commit b91383538b7592688073a8835cad7c80960efb3b
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:48:48 2022 +0300
+
+    git ignore IDE files
+
+commit e8868d003f76fe4cbb6c7fd9563864c07635fab3
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun Oct 30 13:46:05 2022 +0300
+
+    requirements file moved upper
+
+commit 77d4a02b4108125db12a7d8bb316103cdc878f58
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat Oct 29 00:00:04 2022 +0300
+
+    Create structure skeleton
+
+commit 8b4445d389b20066c37432fd4ef9483b7007304f
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Tue Oct 25 21:45:34 2022 +0300
+
+    Initial commit
